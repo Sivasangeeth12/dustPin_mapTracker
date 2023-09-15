@@ -9,6 +9,7 @@ function App() {
     <div className="App">
       <Authen/>
        <p>Hello</p>
+       <p>World</p>
     </div>
   );
 }
