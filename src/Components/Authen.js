@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+/*import React, { useState } from 'react'
 import {auth}from "../firebase-config"
 import {createUserWithEmailAndPassword,signOut} from "firebase/auth"
 
@@ -27,4 +27,4 @@ const Authen = () => {
   )
 }
 
-export default Authen;
+export default Authen;*/
