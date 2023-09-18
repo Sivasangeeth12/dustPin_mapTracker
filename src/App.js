@@ -1,16 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import Authen from "./Components/Authen";
-import {database} from "./firebase-config";
-import { useState } from 'react';
-import Navbar from './Components/pages/Navbar';
-import Login from "./Components/pages/Login";
+import Navigationbar from '../src/Components/pages/NavigationBar';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <Login/>
-    </div>
+      <Navigationbar/>
+      </div>
   );
 }
+
 export default App;

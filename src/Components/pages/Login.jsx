@@ -1,17 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
+
+// import 'firebase/compat/auth'
 const Login = () => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
+    <>
+    <Button variant='primary' onClick={handleShow}>Login</Button>
     
     <div
       className="modal show"
       style={{ display: 'block', position: 'initial' }}
     >
-      <Modal.Dialog className="">
+      <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
         <Modal.Header closeButton className="bg-body-secondary">
           <Modal.Title>Login</Modal.Title>
         </Modal.Header>
@@ -27,7 +34,7 @@ const Login = () => {
                                  </Form.Group>
                                  <Form.Group className="mb-3" controlId="formBasicPassword">
                                  <FloatingLabel controlId="password" label="Enter Password">
-                                 <Form.Control type="password" placeholder="Password" />
+                                 <Form.Control   type="password" placeholder="Password" />
                                  </FloatingLabel>
                                  </Form.Group>
                                  <Button variant="primary" type="submit">Login</Button>
@@ -36,9 +43,9 @@ const Login = () => {
                         </div>
                     </div>
         </Modal.Body>
-      </Modal.Dialog>
+      </Modal>
     </div>
-    
+    </>
   )
 }
 
