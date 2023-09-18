@@ -5,7 +5,6 @@ import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
-// import 'firebase/compat/auth'
 const Login = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -38,7 +37,7 @@ const Login = () => {
                                  </Form.Group>
                                  <Button variant="primary" type="submit">Login</Button>
                            </Form>
-
+                            
                            
                             </div>
                         </div>
