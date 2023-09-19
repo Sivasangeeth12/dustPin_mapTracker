@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 //import {getFirestore,doc,getDoc}from "firebase/firestore"
 //import { getAnalytics } from "firebase/analytics";
 import {getFirestore} from "firebase/firestore"
-//import {getAuth} from "firebase/auth"
+import {getAuth} from "firebase/auth"
 //import firebase from 'firebase/app';
 //import 'firebase/database';
 // TODO: Add SDKs for Firebase products that you want to use
@@ -22,7 +22,8 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app);
-export { firestore };
+const auth=getAuth(app);
+export { firestore,auth };
 // firebase.initializeApp(firebaseConfig);
 // export default firebase;
 // Initialize Firebase
@@ -30,5 +31,5 @@ export { firestore };
 //export const db=getFirestore(app);
 //doc(db,"binItems","collector1" );
 //const analytics = getAnalytics(app);
-//export const auth=getAuth(app);
+
 //export const database=getFirestore(app);

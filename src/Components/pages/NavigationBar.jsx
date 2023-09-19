@@ -14,7 +14,7 @@ const Navigationbar = () => {
     <div>
     <Navbar expand="lg" className="bg-body-tertiary ml-auto">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">DustBin Marker</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav " className='right-align' style={{justifyContent:'flex-end'}}>
           <Nav> 
@@ -25,7 +25,6 @@ const Navigationbar = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-
     </div>
     <div>
     </div>

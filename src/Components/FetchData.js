@@ -20,7 +20,9 @@ const FetchData = () => {
           }
         };
         fetchData();
+        
     }, []);
+    
   return (
     <div>
       <h2>Fetched Firestore Data:</h2>
@@ -29,13 +31,13 @@ const FetchData = () => {
       ) : (
         <ul>
           {data.map((item) => (
-            <li key={item.name}>{item.email_id}{item.password}</li> // Adjust the key and data fields as needed
-          ))}
-        </ul>
-        
+             <li key={item.name}>{item.email_id}{item.password}</li> // Adjust the key and data fields as needed
+           ))}
+         </ul>
       )}
     </div>
   )
 }
-
+//console.log(newData)
 export default FetchData
+//export {newData}
