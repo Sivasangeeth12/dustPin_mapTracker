@@ -1,8 +1,7 @@
 import React, { Component} from "react";
 import { Map, GoogleApiWrapper,Marker } from "google-maps-react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCoffee,faStar}from "@fortawesome/free-solid-svg-icons"
 import recordsvalue from "./Realtimedata"
+//import logo from "../Assets/dustIcon-removebg-preview.png"
 let latitude;
 let longitude;
 
@@ -73,9 +72,17 @@ class Googlemap extends Component {
             key={index}
             position={{ lat: row[0].lat, lng: row[0].lng }}
             title={`Bio-Capacity: ${row[0]["bio-capacity"]} \nNonBio-capacity: ${row[0]["non-bio-capacity"]} \nE-Waste-Capacity: ${row[0]["e-waste"]}`}
-            icon={{
-              url: "https://cdn-icons-png.flaticon.com/512/5073/5073620.png",
-              scaledSize: new this.props.google.maps.Size(30, 30),
+            icon={{/*
+              url: "https://file.removal.ai/preview/0826e205-8269-4af2-aa55-1b230a29a8fe-mapicon.png",
+              scaledSize: new this.props.google.maps.Size(40, 40),https://file.removal.ai/preview/0507ea3c-47e6-4575-8ee1-a06596a6ffb8-png-clipart-recycling-bin-recycling-symbol-green-bin-waste-container-recycle-recycling-waste-thumbnail.png*/
+              url:
+                  //  row[0]["bio-capacity"] < 90 ||
+                  //  row[0]["non-bio-capacity"] < 90 ||
+                  //  row[0]["e-waste"] < 90
+                   ((row[0]["bio-capacity"]>90) ||(row[0]["non-bio-capacity"]) )
+        ?"https://file.removal.ai/preview/8631d127-2115-414f-aa3e-f3e3c3c63703-images.png"
+        : "https://file.removal.ai/preview/0507ea3c-47e6-4575-8ee1-a06596a6ffb8-png-clipart-recycling-bin-recycling-symbol-green-bin-waste-container-recycle-recycling-waste-thumbnail.png", // Provide the URL of your other icon
+        scaledSize: new this.props.google.maps.Size(30, 30),
             }}
           />
         );
@@ -98,7 +105,7 @@ class Googlemap extends Component {
   }*/
   render() {
     return (
-      <div className="map-container">
+      <div className="map-container w-50 h-50  position-absolute " style={{paddingLeft:"25%"}}>
         <Map
           google={this.props.google}
           initialCenter={{

@@ -22,12 +22,9 @@ const Login = () => {
   const emailHandle = (event) =>{
     setEmail(event.target.value);
   }
-
-
   const passwordHandle = (event) =>{
     setPassword(event.target.value);
   }
-
   const handleSubmit = async(e) =>{
      e.preventDefault();
 try{
@@ -35,34 +32,17 @@ try{
     const user = userCredential.user
     console.log("user signed in ", user)
     nav('/main');
-    alert("Success");
+    //alert("Success");
+    handleClose()
     }catch(err){
       setError(err.message);
       alert("Invalid");
       console.error('error',err)
     }
-
-    // let count = 0;
-    // newData.forEach((item)=>{
-    //   if(item.email_id === email && item.password === password){
-    //     console.log("login success!!!")
-    //     alert('login succes////')
-    //   }
-    //   else{
-    //     count++;
-    //   }
-    //   if(count == newData.length){
-    //     console.error("login failed")
-    //   }
-    // })
-    
-    
   }
   return (
-    
     <>
-    <Button variant='primary' onClick={handleShow}>Login</Button>
-    
+    <Button variant="success" onClick={handleShow} className="">Login</Button>
     <div
       className="modal show"
       style={{ display: 'block', position: 'initial' }}
@@ -88,8 +68,6 @@ try{
                                  </Form.Group>
                                  <Button variant="primary" type="submit">Login</Button>
                            </Form>
-
-                           
                             </div>
                         </div>
                     </div>

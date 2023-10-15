@@ -1,7 +1,28 @@
 .App {
   text-align: center;
 }
+.google-text{
+  font-family: 'Mooli', sans-serif;
+}
+.google-font{
+  font-family: 'Alkatra', cursive;
 
+}
+.nav-links{
+  transition: transform .2s;
+}
+.nav-links:hover{
+  transform: scale(1.1);
+  color: #198754;
+}
+.nav-link
+{
+  transition: transform .2s;
+}
+.nav-link:hover{
+  transform: scale(1.1);
+  opacity: 0.5;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

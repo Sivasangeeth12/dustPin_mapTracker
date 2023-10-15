@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import StartFirebase from '../firebase-config-realtime';
 import {ref,onValue} from "firebase/database";
-import {Table} from "react-bootstrap";
+import {Col, Container, Row, Table} from "react-bootstrap";
+import Navigationbar from './pages/NavigationBar';
+import Googlemap from './Googlemap';
 
 const db=StartFirebase();
 let recordsvalue=[[]];
@@ -32,10 +34,13 @@ export class Realtimedata extends React.Component{
   render()
   {
     return(
-      <Table className="w-75  container" bordered striped variant='dark'>
-        <thead>
-          <tr>
-            <th>DustBin No</th>
+      <>
+      <Navigationbar/>
+      <div className="table-responsive mt-3">
+      <Table className="w-75  container" bordered striped variant='dark' >
+        <thead >
+          <tr >
+            <th >DustBin No</th>
             <th>Type</th>
             <th>Capacity</th>
             <th>Type</th>
@@ -50,29 +55,39 @@ export class Realtimedata extends React.Component{
           {this.state.tableData.map((row,index)=>
           {
             const mapValues=[{
-              "lat":row.data.lat,
-              "lng":row.data.lng,
-              "bio-capacity":row.data.bio.capacity,
-              "non-bio-capacity":row.data.nonbio.capacity,
-              "e-waste":row.data.ewaste.capacity
+              "lat":row.data.Latitude,
+              "lng":row.data.Longitude,
+              "bio-capacity":row.data.Biodegradable.Capacity,
+              "non-bio-capacity":row.data.NonBiodegradable.Capacity,
+              "e-waste":row.data.EWaste.Capacity
             }]
             recordsvalue.push(mapValues);
             return(
             <tr>
               <td>{row.key}</td>
               <td>Bio</td>
-              <td>{row.data.bio.capacity}</td>
+              <td>{row.data.Biodegradable.Capacity}</td>
               <td>Non-Bio</td>
-              <td>{row.data.nonbio.capacity}</td>
+              <td>{row.data.NonBiodegradable.Capacity}</td>
               <td>E-Waste</td>
-              <td>{row.data.ewaste.capacity}</td>
-              <td>{row.data.lat}</td>
-              <td>{row.data.lng}</td>
+              <td>{row.data.EWaste.Capacity}</td>
+              <td>{row.data.Latitude}</td>
+              <td>{row.data.Longitude}</td>
             </tr>
             )
           })}
         </tbody>
       </Table>
+      </div>
+      <Googlemap/>
+      {/* <Container className="d-inline-flex">
+      <Row>
+        <Col lg={4}><img src='https://file.removal.ai/preview/0826e205-8269-4af2-aa55-1b230a29a8fe-mapicon.png' height={50}width={50}></img></Col>
+        <Col lg={4}>{<Googlemap/>}</Col>
+        <Col lg={4}><img src='https://file.removal.ai/preview/0826e205-8269-4af2-aa55-1b230a29a8fe-mapicon.png'height={10}width={10} ></img></Col>
+      </Row>
+      </Container> */}
+      </>
     )
   }
 }

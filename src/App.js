@@ -10,16 +10,18 @@ import Navigationbar from './Components/pages/NavigationBar';
 import {res} from "./Components/FetchData"
 import { Routes,Route } from 'react-router-dom';
 import DashBoard from './Components/pages/DashBoard';
+import Home from './Components/pages/Home';
 function App() {
   return (
     <div className="App">
      {/* <FetchData/>
      <Realtimedata/>
      <Googlemap/>  */}
-    <Navigationbar/>
+    {/* <Navigationbar/> */}
      {/* <FetchData/>  */}
      <Routes>
-      <Route path='/main' Component={DashBoard}></Route>
+      <Route path='/main' Component={Realtimedata}></Route>
+      <Route path='/' Component={Home}></Route>
      </Routes>
     </div>
   );

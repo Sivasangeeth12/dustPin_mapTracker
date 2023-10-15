@@ -1,10 +1,9 @@
 import React from 'react'
 import { Realtimedata } from '../Realtimedata'
 import Googlemap from '../Googlemap'
-
 const DashBoard = () => {
   return (
-    <div>
+    <div className="">
         <Realtimedata/>
         <Googlemap/>
     </div>

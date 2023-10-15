@@ -16,4 +16,5 @@ function StartFirebase()
     const app=initializeApp(firebaseConfig);
     return getDatabase(app);
 }
-export default StartFirebase;
+
+export default StartFirebase ;
